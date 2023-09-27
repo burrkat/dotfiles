@@ -7,6 +7,7 @@ Most of the packages needed can be downloaded either through
 
 ### Initial Packages
 Packages you'll need to install (will eventually turn this into another shell script?)
+
 & indicate Windows only
 ^ indicate optional
 
