@@ -7,7 +7,9 @@ Most of the packages needed can be downloaded either through
 
 Packages you'll need to install (will eventually turn this into another shell script?)
 * indicate Windows only
+^ indicate optional
 
+- gh
 - git
 - make
 * mingw
@@ -15,4 +17,6 @@ Packages you'll need to install (will eventually turn this into another shell sc
 - nodejs
 - python
 - ripgrep
+^ ruby
 - rust
+^ unzip
