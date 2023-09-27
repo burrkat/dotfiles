@@ -7,14 +7,13 @@ Most of the packages needed can be downloaded either through
 
 ### Initial Packages
 Packages you'll need to install (will eventually turn this into another shell script?)
-* indicate Windows only
+& indicate Windows only
 ^ indicate optional
 
 - gh
 - git
-    - *For Windows, ensure 'C:\Program Files\git\bin' is part of your PATH variable
 - make
-- *mingw
+- &mingw
 - neovim
 - nodejs
 - python
@@ -22,3 +21,5 @@ Packages you'll need to install (will eventually turn this into another shell sc
 - ^ruby
 - rust
 - ^unzip
+
+**Note: For Windows, ensure 'C:\Program Files\git\bin' is part of your PATH variable, to run shell scripts
