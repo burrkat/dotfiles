@@ -13,6 +13,16 @@ local options = {
     -- Enable mouse mode
     mouse = 'a',
 
+    -- Default tab options
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+
+    -- Turn on autoindent
+    autoindent = true,
+    smartindent = true,
+
     -- Sync clipboard between OS and Neovim.
     --  Remove this option if you want your OS clipboard to remain independent.
     --  See `:help 'clipboard'`
@@ -28,12 +38,6 @@ local options = {
     ignorecase = true,
     smartcase = true,
 
-    -- Default tab options
-    tabstop = 4,
-    shiftwidth = 4,
-    expandtab = true,
-    colorcolumn = "80",
-
     -- Keep signcolumn on by default
     signcolumn = 'yes',
 
@@ -46,8 +50,34 @@ local options = {
 
     -- NOTE: You should make sure your terminal supports this
     termguicolors = true,
+
+    -- Split new windows to the same direction every time
+    splitright = true,
+    splitbelow = false,
+
+    -- Highlight the cursor line
+    cursorline = true,
+
+    -- Add a column to indicate 80 chars out
+    colorcolumn = '80'
 }
 
 for option, value in pairs(options) do
-  vim.opt[option] = value
+    vim.opt[option] = value
+end
+
+
+if jit.os == 'Windows' then
+    local powershell_options = {
+	shell = 'powershell',
+	shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;',
+	shellredir = '-RedirectStandardOutput %s -NoNewWindo -Wait',
+	shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode',
+	shellquote = '',
+	shellxquote = '',
+    }
+
+    for option, value in pairs(powershell_options) do
+    	vim.opt[option] = value
+    end
 end
