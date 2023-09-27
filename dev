@@ -2,15 +2,16 @@
 
 echo "Operating System: $OSTYPE"
 
-# Windows (assumed default)
-sourcePath="nvim\\"
-destinationPath="$USERPROFILE\\AppData\\Local\\nvim\\"
-
 if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "darwin"* ]];
 then
     # Linux or Mac OSX
     sourcePath="nvim/"
     destinationPath="$HOME/.config/nvim"
+elif [[ "$OSTYPE" == "msys" ]];
+then
+    # Windows
+    sourcePath="nvim\\"
+    destinationPath="$USERPROFILE\\AppData\\Local\\nvim\\"
 else
     # Unknown.
     echo "Unknown OS, exiting."
