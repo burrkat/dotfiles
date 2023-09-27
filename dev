@@ -11,7 +11,7 @@ elif [[ "$OSTYPE" == "msys" ]];
 then
     # Windows
     sourcePath="nvim\\"
-    destinationPath="$USERPROFILE\\AppData\\Local\\nvim\\"
+    destinationPath="$USERPROFILE\\AppData\\Local\\"
 else
     # Unknown.
     echo "Unknown OS, exiting."
@@ -21,4 +21,4 @@ fi
 echo "Source Path: $sourcePath"
 echo "Destination Path: $destinationPath"
 
-cp -r "$sourcePath" "$destinationPath"
+cp -rf "$sourcePath" "$destinationPath"
