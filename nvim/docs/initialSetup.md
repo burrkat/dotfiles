@@ -1,22 +1,24 @@
-NOTE:
+# Initial Setup
 
+### Package Managers
 Most of the packages needed can be downloaded either through
+1. Chocolatey, on Windows (choco)
+2. Homebrew, on Mac (brew)
 
-    1) Chocolatey, on Windows (choco)
-    2) Homebrew, on Mac (brew)
-
+### Initial Packages
 Packages you'll need to install (will eventually turn this into another shell script?)
 * indicate Windows only
 ^ indicate optional
 
 - gh
 - git
+    - *For Windows, ensure 'C:\Program Files\git\bin' is part of your PATH variable
 - make
-* mingw
+- *mingw
 - neovim
 - nodejs
 - python
 - ripgrep
-^ ruby
+- ^ruby
 - rust
-^ unzip
+- ^unzip
