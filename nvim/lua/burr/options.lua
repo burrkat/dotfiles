@@ -66,12 +66,11 @@ for option, value in pairs(options) do
     vim.opt[option] = value
 end
 
-
 if jit.os == 'Windows' then
     local powershell_options = {
 	shell = 'powershell',
 	shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;',
-	shellredir = '-RedirectStandardOutput %s -NoNewWindo -Wait',
+	shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait',
 	shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode',
 	shellquote = '',
 	shellxquote = '',
