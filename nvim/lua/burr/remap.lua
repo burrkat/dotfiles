@@ -4,7 +4,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local Remap = require('burr.options')
+local Remap = require('burr.keymap')
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
