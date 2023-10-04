@@ -77,6 +77,18 @@ require('lazy').setup({
   -- Better netrw navigation
   'tpope/vim-vinegar',
 
+  -- for modifying surrounding characters
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end,
+  },
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -181,10 +193,11 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    config = function()
+      require("ibl").setup({
+        indent = { char = '┊' }
+      })
+    end,
   },
 
   -- "gc" to comment visual regions/lines
@@ -292,6 +305,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+vim.keymap.set("v", "J", ':m \'>+1<CR>gv=gv', { desc = "Move highlighted selection (J) (Indent-aware)" })
+vim.keymap.set("v", "K", ':m \'<-2<CR>gv=gv', { desc = "Move highlighted selection (K) (Indent-aware)" })
+
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste over selection without losing buffer" })
+vim.keymap.set("n", "<leader>dd", '"_dd', { desc = "Delete line without losing buffer" })
+vim.keymap.set("x", "<leader>d", '"_d', { desc = "Delete selection without losing buffer" })
+
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

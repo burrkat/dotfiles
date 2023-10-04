@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+
     -- Colors
     {
 	'catppuccin/nvim',
@@ -26,9 +27,20 @@ require('lazy').setup({
     'tpope/vim-rhubarb',
     'kdheepak/lazygit.nvim',
 
-    -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-    -- Better netrw navigation
-    'tpope/vim-vinegar',
+    'tpope/vim-vinegar', -- Better netrw navigation
+
+    'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines	
+
+    {
+	'kylechui/nvim-surround',
+	version = '*', -- Used for stability
+	event= 'VeryLazy',
+	config = function()
+	    require('nvim-surround').setup({
+		-- Configuration here, or leave empty to use default_handlers
+	    })
+	end,
+    },
 })
