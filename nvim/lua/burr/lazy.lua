@@ -34,13 +34,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines	
 
     {
-	'kylechui/nvim-surround',
+	'kylechui/nvim-surround', -- for add/del/modding surrounding chars
 	version = '*', -- Used for stability
-	event= 'VeryLazy',
-	config = function()
-	    require('nvim-surround').setup({
-		-- Configuration here, or leave empty to use default_handlers
-	    })
-	end,
+	event = 'VeryLazy'
     },
 })
