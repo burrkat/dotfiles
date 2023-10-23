@@ -14,6 +14,7 @@ Packages you'll need to install (will eventually turn this into another shell sc
 
 - gh
 - git
+- lazygit
 - make
 - &mingw
 - neovim
