@@ -34,6 +34,7 @@ nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
 nnoremap('n', 'nzzzv')
 nnoremap('N', 'Nzzzv')
+
 --- Remaps for dealing with word wrap
 nnoremap('j', 'v:count == 0 ? "gj" : "j"', { expr = true, silent = true })
 nnoremap('k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
@@ -43,7 +44,7 @@ nnoremap('k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
 --     [[:<c-u>let temp_variable=@"<CR>gvy:<c-u>let @/='\V<C-R>=escape(@",'/\')<CR>'<CR>:let @"=temp_variable<CR>]],
 --     { desc = 'Still need to determine what this does', silent = true }
 -- )
--- Movement END --
+-- Navigation END --
 
 -- Editing --
 -- Line Movement
@@ -59,3 +60,4 @@ nnoremap('<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 xnoremap('<leader>p', '"_dP', { desc = 'Paste over selection without losing buffer' })
 nnoremap('<leader>dd', '"_dd', { desc = 'Delete line without losing buffer' })
 xnoremap('<leader>d', '"_d', { desc = 'Delete selection without losing buffer' })
+-- Editing END --

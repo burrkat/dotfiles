@@ -22,15 +22,11 @@ require('lazy').setup({
 	end,
     },
 
-    -- Git
+    -- Git --
     'tpope/vim-fugitive',
     'tpope/vim-rhubarb',
-    {
-	'kdheepak/lazygit.nvim',
-	dependencies = {
-	    'nvim-lua/plenary.nvim'
-	}
-    },
+    { 'kdheepak/lazygit.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+    -- Git END --
 
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
